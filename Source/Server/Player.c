@@ -237,6 +237,7 @@ void init_player(server_t*  server,
         }
     }
     player->is_invisible = 0;
+    player->using_ovl    = 0;
     player->kills        = 0;
     player->deaths       = 0;
     memset(player->name, 0, 17);

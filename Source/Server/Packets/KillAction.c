@@ -29,7 +29,7 @@ void send_kill_action_packet(server_t* server,
     HASH_ITER(hh, server->players, connected_player, tmp)
     {
         uint8_t isPast = is_past_state_data(connected_player);
-        if ((makeInvisible && connected_player->id != player->id && isPast) || (isPast && !makeInvisible)) {
+        if ((makeInvisible && connected_player->id != player->id && isPast) || (isPast && !makeInvisible && (!player->using_ovl || connected_player->id != player->id))) {
             if (enet_peer_send(connected_player->peer, 0, packet) == 0) {
                 sent = 1;
             }

@@ -63,6 +63,7 @@ typedef struct player
     uint8_t                  told_to_master;
     uint8_t                  has_intel;
     uint8_t                  is_invisible;
+    uint8_t                  using_ovl;
     uint8_t                  welcome_sent;
     uint8_t                  reloading;
     uint8_t                  spam_counter;

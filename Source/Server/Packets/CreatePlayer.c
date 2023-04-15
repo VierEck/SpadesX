@@ -28,7 +28,7 @@ void send_respawn(server_t* server, player_t* respawn_player)
     player_t *player, *tmp;
     HASH_ITER(hh, server->players, player, tmp)
     {
-        if (is_past_state_data(player)) {
+        if (is_past_state_data(player) && !player->using_ovl) {
             send_create_player(server, player, respawn_player);
         }
     }
